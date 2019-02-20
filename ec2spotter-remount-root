@@ -172,7 +172,7 @@ echo ""
 echo "Attaching volume $PERSISTENT_ROOT_VOLUME as /dev/sdf"
 # Attach volume
 #${APIBIN}/ec2-attach-volume $PERSISTENT_ROOT_VOLUME -d /dev/sdf --instance $INSTANCE_ID || exit -1
-aws ec2 attach-volume --volume-id $PERSISTENT_ROOT_VOLUME --instance-id $INSTANCE_ID --device /dev/sdf --region ${SPOT_REGION} || exit -1
+aws ec2 attach-volume --volume-id $PERSISTENT_ROOT_VOLUME --instance-id $INSTANCE_ID --device /dev/sdf --region ${SPOT_REGION}
 
 while true; do
     if lsblk /dev/nvme1n1; then
